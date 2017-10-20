@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p><span>0</span><span>1</span><span>23456789</span></p>
+</body>
+</html>
+<script src="js/jquery-2.1.3.min.js"></script>
+<script>
+    $('p').mouseup(function(){
+        var txt = window.getSelection?window.getSelection():document.selection.createRange().text;
+        let selRange = txt.getRangeAt(0);
+        console.log(selRange)
+        var arr = $('p').text();
+        var fc = txt.toString().substr(0,1);
+        console.log('初始：'+ arr.indexOf(fc)+'长度：'+ txt.toString().length)
+    })
+</script>

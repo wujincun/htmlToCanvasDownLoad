@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        /*CSS重置*/
+        body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,table,td,img,div,dl,dt,dd,input{margin:0;padding:0;border:0;box-sizing:border-box}
+        body{ font-size:14px;}
+        img{border:none;}
+        ul,ol{ list-style:none;}
+        input,select,textarea{outline:none;}
+        textarea{resize:none;}
+        a{ text-decoration:none;}
+        #messageTpl {
+            line-height: 30px;
+        }
+        #messageTpl .title {
+            line-height: 50px;
+            font-size: 20px;
+            text-align: center;
+            border-bottom: 2px solid #dedede;
+        }
+        #messageTpl .detailListContent {
+            margin-top: 10px;
+        }
+        #messageTpl .detailListContent .detailTitle {
+            padding: 0 10px;
+            font-size: 16px;
+            border-bottom: 1px solid #dedede;
+            font-weight:bold;
+        }
+        #messageTpl .detailListContent .detailList .detailITem {
+            padding: 0 20px;
+            border-bottom: 1px solid #dedede;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+        #messageTpl .detailListContent .detailList .detailITem span{
+            width: 33%;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            text-align: right;
+        }
+        #messageTpl .detailListContent .detailList .detailITem span:first-child{
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div id="messageTpl">
+    <div class="title">9月1日销售统计</div>
+    <div class="dealDetail detailListContent">
+        <div class="detailTitle">交易详情</div>
+        <ul class="detailList">
+            <li class="detailITem">
+                <span>线上支付</span><span>30单</span><span>1500.00元</span>
+            </li>
+            <li class="detailITem">
+                <span>线上支付</span><span>30单</span><span>1500.00元</span>
+            </li>
+            <li class="detailITem">
+                <span>线上支付</span><span>30单</span><span>1500.00元</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="orderTypeDetail detailListContent">
+        <div class="detailTitle">订单类型详情</div>
+        <ul class="detailList">
+            <li class="detailITem">
+                <span>堂点</span><span>30单</span><span>1500.00元</span>
+            </li>
+            <li class="detailITem">
+                <span>堂点</span><span>30单</span><span>1500.00元</span>
+            </li>
+            <li class="detailITem">
+                <span>堂点</span><span>30单</span><span>1500.00元</span>
+            </li>
+        </ul>
+    </div>
+    <div class="shopsDetail detailListContent">
+        <div class="detailTitle">分店详情</div>
+        <ul class="detailList">
+            <li class="detailITem">
+                <span>西贝莜面村望京店</span><span>30单</span><span>1500.00元</span>
+            </li>
+            <li class="detailITem">
+                <span>西贝莜面村望京店</span><span>30单</span><span>1500.00元</span>
+            </li>
+            <li class="detailITem">
+                <span>西贝莜面村望京店</span><span>30单</span><span>1500.00元</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
