@@ -41,15 +41,15 @@
             fontcolor: '#FF621D',
             background: '#ffffff'
         };
-        var param = {
+        var param1 = {
             render: 'canvas',
             ecLevel: 'H',
             minVersion: 3,
             radius: 0,
             quiet: 1,
-            size: 300,
+            size: 330,
             text: 'http://wxfx.lashou.com/app/index.php?i=8&c=entry&mode=1&storeid=10&tablesid=51&do=waplist&m=weisrc_dish',
-            mode: 2,
+            mode: 0,
             mSize: 0.09, // 调整字体大小区间[0.40~0.06]
             mPosX: 0.5, // x-align:center
             mPosY: 0.5, // y-align:middle
@@ -59,7 +59,7 @@
             background: '#ffffff'
         };
         $('#div1').qrcode(param);
-        $('#div2').qrcode(param);
+        $('#div2').qrcode(param1);
 
 
         var arr = [];
@@ -74,20 +74,21 @@
                 /*qrcode*/
 
                 var qrcodeCtx = value.getContext('2d');
-                var qrcodeData = qrcodeCtx.getImageData(0, 0, 300, 300);
+                var qrcodeData = qrcodeCtx.getImageData(0, 0, 330, 330);
 
                 ctx.drawImage(backImg, 0, 0, 1000, 1466);
                 ctx.drawImage(backImg, 0, 0, 1000, 1466);
-                ctx.font = "italic 28px 黑体";
+                ctx.font = " 28px 微软雅黑";
                 //设置字体颜色
-                ctx.fillText("桌号：8", 380, 360);
-                ctx.putImageData(qrcodeData, 360, 424);
+                ctx.textAlign="center";
+                ctx.fillText("桌号：8", 500, 360);
+                ctx.putImageData(qrcodeData, 345, 412);
                 arr.push(canvas);
             })
         }
-         exportAll= function() {
+        exportAll= function() {
             var len = arr.length;
-            var index = 0;
+            var index = 0;//用key只能导出最后一张
             var z = new ZipArchive();
 
             arr.forEach(function (item, key) {
@@ -99,13 +100,13 @@
                 // auto run
                 (function (canvas, name) {
                     canvas.toBlob(function (blob) {
-                        index++;
+                        index++;//用key只能导出最后一张
                         z.addFile(name, blob);
-                        if (index >= len) {
-                            z.export('ngno');
+                        if (index >= len) {//用key只能导出最后一张
+                            z.export('test');
                         }
                     });
-                })(item, '1.png');
+                })(item, key + '.png');//key+'.png'是传入的name参数，多张图片不可写死，否则认为多张图片一个名字会报错
             });
         }
 
